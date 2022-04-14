@@ -9,15 +9,36 @@
         android:id="@+id/teslaFragment"
         android:name="com.codystritz.elonnews.ui.fragments.TeslaFragment"
         android:label="fragment_tesla"
-        tools:layout="@layout/fragment_tesla" />
+        tools:layout="@layout/fragment_tesla" >
+        <action
+            android:id="@+id/action_teslaFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/spaceXFragment"
         android:name="com.codystritz.elonnews.ui.fragments.SpaceXFragment"
         android:label="fragment_space_x"
-        tools:layout="@layout/fragment_space_x" />
+        tools:layout="@layout/fragment_space_x" >
+        <action
+            android:id="@+id/action_spaceXFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/neuralinkFragment"
         android:name="com.codystritz.elonnews.ui.fragments.NeuralinkFragment"
         android:label="fragment_neuralink"
-        tools:layout="@layout/fragment_neuralink" />
+        tools:layout="@layout/fragment_neuralink" >
+        <action
+            android:id="@+id/action_neuralinkFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.codystritz.elonnews.ui.fragments.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" >
+        <argument
+            android:name="article"
+            app:argType="com.codystritz.elonnews.models.Article" />
+    </fragment>
 </navigation>

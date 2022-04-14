@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codystritz.elonnews.R
 import com.codystritz.elonnews.adapters.ArticleAdapter
@@ -46,8 +47,10 @@ class TeslaFragment : Fragment() {
             adapter = articleAdapter
             layoutManager = LinearLayoutManager(activity)
         }
-        //Todo: implement - navigate to article fragment
-        articleAdapter.setOnItemClickListener {}
+        articleAdapter.setOnItemClickListener {
+            val action = TeslaFragmentDirections.actionTeslaFragmentToArticleFragment(it)
+            findNavController().navigate(action)
+        }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getNews("Tesla").collectLatest { articleAdapter.submitData(it) }
