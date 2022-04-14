@@ -13,7 +13,9 @@ class NewsPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Article> {
         return try {
             val page = params.key ?: FIRST_PAGE_INDEX
-            val searchListResponse = newsApi.searchForNews(searchQuery, page).body()
+            val searchListResponse = newsApi
+                .searchForNews(searchQuery, params.loadSize, page)
+                .body()
             val articles = searchListResponse?.articles.orEmpty()
             val nextKey = if (articles.isEmpty()) null else page.plus(1)
             val prevKey = if (page == FIRST_PAGE_INDEX) null else page.minus(1)
