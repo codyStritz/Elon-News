@@ -30,7 +30,7 @@ render.experimental.xml
 
 # Google Services (e.g. APIs or Firebase)
 google-services.json
-app/src/main/res/values/news_api_key.xml
+app/src/main/java/com/codystritz/elonnews/util/Constants.kt
 
 
 # Android Profiling
