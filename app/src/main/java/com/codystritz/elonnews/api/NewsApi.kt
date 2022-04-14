@@ -16,6 +16,8 @@ interface NewsApi {
         pageSize: Int,
         @Query("page")
         pageNumber: Int = 1,
+        @Query("language")
+        language: String = "en",
         @Query("apiKey")
         apiKey: String = API_KEY
     ): Response<NewsResponse>
