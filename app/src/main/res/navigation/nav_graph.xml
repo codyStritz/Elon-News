@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/teslaFragment">
+
+    <fragment
+        android:id="@+id/teslaFragment"
+        android:name="com.codystritz.elonnews.ui.fragments.TeslaFragment"
+        android:label="fragment_tesla"
+        tools:layout="@layout/fragment_tesla" />
+    <fragment
+        android:id="@+id/spaceXFragment"
+        android:name="com.codystritz.elonnews.ui.fragments.SpaceXFragment"
+        android:label="fragment_space_x"
+        tools:layout="@layout/fragment_space_x" />
+    <fragment
+        android:id="@+id/neuralinkFragment"
+        android:name="com.codystritz.elonnews.ui.fragments.NeuralinkFragment"
+        android:label="fragment_neuralink"
+        tools:layout="@layout/fragment_neuralink" />
+</navigation>
